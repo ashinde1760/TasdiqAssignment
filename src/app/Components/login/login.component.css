@@ -1,0 +1,22 @@
+/* ::ng-deep .card{
+    width: 50%;
+    margin: 0% 25%;
+}
+
+::ng-deep .regForm{
+    width: 100%;
+} */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(107, 127, 218);
+  }
+ 
+
+/* form{
+    width: fit-content;
+  } */

@@ -1,0 +1,93 @@
+<p-card class="container">
+  <div style="text-align: center; color: crimson; margin-bottom: 30px">
+    <u><h2>SignUp Here</h2></u>
+  </div>
+  <hr style="width: 100%;">
+  <div style="text-align: center;">
+    <form
+      [formGroup]="project"
+      style="border-radius: 1px solid black"
+      autocomplete="off"
+    >
+      <p>
+        <span class="p-float-label p-fluid">
+            <label for="name">Name</label>
+          <input type="text" id="name" pInputText formControlName="name" />
+          <br />
+          <small
+            *ngIf="!project.get('name')?.valid && project.get('name')?.touched"
+          >
+            <span style="color: red"> Please enter valid Name. </span>
+          </small>
+        </span>
+      </p>
+      <p>
+        <span class="p-float-label p-fluid">
+          <input type="email" id="email" pInputText formControlName="email" />
+          <label for="email">Email</label><br />
+          <small
+            *ngIf="
+              !project.get('email')?.valid && project.get('email')?.touched
+            "
+          >
+            <span style="color: red"> Please enter valid Email. </span>
+          </small>
+        </span>
+      </p>
+      <p>
+        <span class="p-float-label p-fluid">
+          <input
+            type="text"
+            id="phoneNumber"
+            pInputText
+            formControlName="phoneNumber"
+          />
+          <label for="phoneNumber">Phone Number</label><br />
+          <small
+            *ngIf="
+              !project.get('phoneNumber')?.valid &&
+              project.get('phoneNumber')?.touched
+            "
+          >
+            <span style="color: red"> Please enter valid phone number. </span>
+          </small>
+        </span>
+      </p>
+      <p>
+        <span class="p-float-label p-fluid">
+          <input
+            type="password"
+            id="password"
+            pInputText
+            formControlName="password"
+          />
+          <label for="password">Password</label><br />
+          <small
+            *ngIf="
+              !project.get('password')?.valid &&
+              project.get('password')?.touched
+            "
+          >
+            <span style="color: red"> Please enter valid Password. </span>
+          </small>
+        </span>
+      </p>
+
+      <p>
+        <p-checkbox name="groupname" value="val1" label=" Agree with Terms and Conditions" formControlName="checkBox"></p-checkbox>
+      </p>
+    </form>
+    <!-- <p-divider></p-divider> -->
+
+    <div class="p-fluid" style="text-align: center; margin-top: 50px;">
+      <button
+        [disabled]="!project.valid"
+        pButton
+        label="Signup"
+        (click)="onSignUp()"
+      ></button>
+      <br>
+      <b> Already have and Account</b> <a routerLink=""> Login here</a>
+    </div>
+  </div>
+</p-card>
